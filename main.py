@@ -33,26 +33,26 @@ def main():
         for event in pygame.event.get():
             if event.type == QUIT:
                 sys.exit()
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT:
-                    Player.speed[0] = -10
+        if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 Player.speed[0] = 10
+            if event.key == pygame.K_LEFT:
+                Player.speed[0] = -10
             if event.key == pygame.K_UP:
                 Player.speed[1] = -10
             if event.key == pygame.K_DOWN:
                 Player.speed[1] = 10
-            if event.type == pygame.KEYUP:
-                if event.key == pygame.K_LEFT:
-                    Player.speed[0] = 0
+        if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
+                Player.speed[0] = 0
+            if event.key == pygame.K_LEFT:
                 Player.speed[0] = 0
             if event.key == pygame.K_UP:
                 Player.speed[1] = 0
             if event.key == pygame.K_DOWN:
                 Player.speed[1] = 0
-            Player.update()
 
+        Player.update()
         screen.fill(color)
         screen.blit(Player.image, Player.rect)
         pygame.display.flip()
