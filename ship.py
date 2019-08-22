@@ -15,3 +15,8 @@ class Ship(pygame.sprite.Sprite):
     def update(self):
         self.rect.move_ip(self.speed)
 
+    def checkReset(self, endPos):
+        return self.rect.center[0] > endPos
+
+    def reset(self, pos):
+        self.rect.center = pos
